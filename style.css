@@ -1,0 +1,126 @@
+/* Existing animations... */
+
+/* Enhanced Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Styles */
+.nav-links {
+    display: flex;
+    transition: all 0.4s ease;
+}
+
+/* Active Mobile Menu */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Mobile Menu Button */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Nav Links */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+        right: 0;
+        animation: slideIn 0.4s ease-out;
+    }
+    
+    .nav-link {
+        margin: 15px 0;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+    
+    /* Hero content adjustments */
+    .hero-content {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .hero-image {
+        animation: fadeIn 0.6s ease-out 0.3s forwards;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+/* Backdrop for mobile menu */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Smooth closing animation */
+@keyframes slideOut {
+    from {
+        right: 0;
+        opacity: 1;
+    }
+    to {
+        right: -100%;
+        opacity: 0;
+    }
+}
