@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent;
+  }
+  
+  .skill-card {
+    @apply bg-gray-800/50 backdrop-blur-lg rounded-xl border border-primary-500/20 
+           hover:border-primary-500/50 transition-all duration-500 transform hover:-translate-y-3 
+           hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/30;
+  }
+  
+  .project-card {
+    @apply bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden 
+           border border-primary-500/20 hover:border-primary-500/50 transition-all duration-500 
+           transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/30;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 
+           hover:to-secondary-700 text-white px-6 py-3 rounded-lg font-medium 
+           transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary-500/50;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary-400 text-primary-400 hover:border-white 
+           hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 
+           transform hover:scale-105;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
