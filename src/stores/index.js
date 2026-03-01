@@ -6,6 +6,7 @@ import ecommerceImage from '@/assets/images/ecommerce.png'
 import trackerImage from '@/assets/images/tracker.png'
 import taskImage from '@/assets/images/task.png'
 import farmerImage from '@/assets/images/farmer.png'
+import timberImage from '@/assets/images/timber.jpeg'
 
 // Fallback paths for local development
 const getImagePath = (importedImage, fallbackPath) => {
@@ -75,6 +76,17 @@ export const usePortfolioStore = defineStore('portfolio', () => {
       image: getImagePath(farmerImage, '/src/assets/images/farmer.png'),
       technologies: ['Vue.js', 'Laravel', 'MySQL', 'Tailwind CSS'],
       category: 'web',
+      demoUrl: '#',
+      githubUrl: '#',
+      featured: true
+    },
+    {
+      id: 5,
+      title: 'Timber Management System',
+      description: 'Mobile application for efficient timber inventory tracking, logging operations, and forest resource management.',
+      image: getImagePath(timberImage, '/src/assets/images/timber.jpeg'),
+      technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB', 'GPS Tracking'],
+      category: 'mobile',
       demoUrl: '#',
       githubUrl: '#',
       featured: true

@@ -12,10 +12,12 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Contact Form -->
         <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-primary-700/50">
           <h3 class="text-3xl font-bold text-white mb-8">Send Message</h3>
+          
           <form @submit.prevent="submitForm" class="space-y-6">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
@@ -42,18 +44,19 @@
                         class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white
                                focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 resize-none"></textarea>
             </div>
+            
             <button type="submit" 
                     :disabled="isSubmitting"
                     class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 
                            rounded-md font-medium hover:from-primary-700 hover:to-secondary-700 
                            transition-all duration-300 transform hover:scale-105 disabled:opacity-50 
                            disabled:cursor-not-allowed">
-              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+              <span v-if="isSubmitting">Sending...</span>
+              <span v-else>Send Message</span>
             </button>
           </form>
         </div>
 
-        <!-- Let's Connect Section -->
         <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-primary-700/50">
           <h3 class="text-3xl font-bold text-white mb-8">Let's Connect</h3>
           <p class="text-gray-300 mb-8 leading-relaxed">
@@ -63,7 +66,6 @@
           </p>
           
           <div class="space-y-6">
-            <!-- GitHub -->
             <div class="flex items-center justify-between p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
@@ -71,17 +73,16 @@
                 </div>
                 <div>
                   <h4 class="text-white font-semibold">GitHub</h4>
-                  <p class="text-gray-400 text-sm">Check out my projects and contributions</p>
+                  <p class="text-gray-400 text-sm">Check out my projects</p>
                 </div>
               </div>
               <a href="https://github.com/APKnation" target="_blank" rel="noopener noreferrer"
                  class="text-primary-400 hover:text-primary-300 transition-colors duration-300 flex items-center space-x-2">
-                <span class="text-sm">Connect with me</span>
+                <span class="text-sm">Connect</span>
                 <ExternalLink class="w-4 h-4" />
               </a>
             </div>
 
-            <!-- Instagram -->
             <div class="flex items-center justify-between p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
@@ -89,17 +90,16 @@
                 </div>
                 <div>
                   <h4 class="text-white font-semibold">Instagram</h4>
-                  <p class="text-gray-400 text-sm">Follow for updates and insights</p>
+                  <p class="text-gray-400 text-sm">Follow for updates</p>
                 </div>
               </div>
               <a href="https://instagram.com/apk_nation" target="_blank" rel="noopener noreferrer"
                  class="text-primary-400 hover:text-primary-300 transition-colors duration-300 flex items-center space-x-2">
-                <span class="text-sm">Connect with me</span>
+                <span class="text-sm">Connect</span>
                 <ExternalLink class="w-4 h-4" />
               </a>
             </div>
 
-            <!-- WhatsApp -->
             <div class="flex items-center justify-between p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
@@ -107,12 +107,12 @@
                 </div>
                 <div>
                   <h4 class="text-white font-semibold">WhatsApp</h4>
-                  <p class="text-gray-400 text-sm">+255749288072</p>
+                  <p class="text-gray-400 text-sm">+255 749 288 072</p>
                 </div>
               </div>
               <a href="https://wa.me/255749288072" target="_blank" rel="noopener noreferrer"
                  class="text-primary-400 hover:text-primary-300 transition-colors duration-300 flex items-center space-x-2">
-                <span class="text-sm">Connect with me</span>
+                <span class="text-sm">Message</span>
                 <ExternalLink class="w-4 h-4" />
               </a>
             </div>
@@ -139,31 +139,51 @@ const form = reactive({
 })
 
 const submitForm = async () => {
+  // 1. Basic Validation check
   if (!form.name || !form.email || !form.subject || !form.message) {
     toast.error('Please fill in all required fields')
     return
   }
-  
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    toast.error('Please enter a valid email address')
-    return
-  }
-  
+
   isSubmitting.value = true
-  
+
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    toast.success('Message sent successfully! I\'ll get back to you soon.')
-    
-    // Reset form
-    Object.keys(form).forEach(key => form[key] = '')
-    
+    // 2. Prepare payload for Web3Forms API
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "989ccebe-0e50-4fc5-b7bf-e36f9c2c2a70",
+        name: form.name,
+        email: form.email,
+        subject: `New Portfolio Message: ${form.subject}`,
+        message: form.message,
+        from_name: form.name,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      toast.success('Thanks! Your message has been sent to my Gmail.');
+      // 3. Clear the form fields
+      Object.assign(form, {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } else {
+      toast.error(result.message || 'Something went wrong. Please try again.');
+    }
   } catch (error) {
-    toast.error('Failed to send message. Please try again.')
+    console.error('Submission error:', error);
+    toast.error('Could not connect to the mail server. Try again later.');
   } finally {
-    isSubmitting.value = false
+    isSubmitting.value = false;
   }
 }
 </script>
