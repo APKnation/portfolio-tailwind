@@ -1,8 +1,8 @@
 <template>
-  <section id="skills" class="py-4 sm:py-6 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+  <section id="skills" class="py-4 sm:py-6 px-4 text-white dark:text-gray-100">
     <div class="max-w-7xl mx-auto">
       <transition appear name="fade">
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 sm:mb-4 md:mb-6 text-white">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 sm:mb-4 md:mb-6 text-white dark:text-gray-100">
           My Skills
         </h2>
       </transition>
@@ -15,7 +15,7 @@
               Technical Proficiency
             </h3>
           </transition>
-          <p class="text-center text-gray-400 text-sm max-w-3xl mx-auto mb-6">
+          <p class="text-center text-gray-400 dark:text-gray-500 text-sm max-w-3xl mx-auto mb-6">
             My technical expertise spans across modern web development technologies, with a focus on building 
             scalable, performant applications that deliver exceptional user experiences.
           </p>

@@ -1,13 +1,13 @@
 <template>
-  <section id="projects" class="py-16 sm:py-20 px-4 bg-gray-900">
+  <section id="projects" class="py-16 sm:py-20 px-4 text-white dark:text-gray-100">
     <div class="max-w-7xl mx-auto">
       <transition appear name="fade">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 gradient-text">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 gradient-text text-white dark:text-gray-100">
           My Projects 
         </h2>
       </transition>
       
-      <p class="text-center text-gray-400 text-sm max-w-3xl mx-auto mb-8">
+      <p class="text-center text-gray-400 dark:text-gray-500 text-sm max-w-3xl mx-auto mb-8">
         Explore my diverse portfolio of projects showcasing practical applications of modern web technologies. 
         Each project represents unique challenges solved through innovative solutions and best practices.
       </p>
@@ -60,7 +60,7 @@
             >
             
             <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent 
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 dark:from-black via-gray-900/80 dark:via-black/80 to-transparent 
                          opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             
             <!-- Quick Actions Overlay -->
@@ -112,16 +112,16 @@
           <!-- Project Content -->
           <div class="p-4 sm:p-6 relative">
             <!-- Title with Hover Effect -->
-            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 
+            <h3 class="text-lg sm:text-xl font-semibold text-white dark:text-gray-100 mb-2 
                        transition-all duration-300 group-hover:text-primary-300 
                        transform group-hover:translate-x-1">
               {{ project.title }}
             </h3>
             
             <!-- Description with Expand on Hover -->
-            <p class="text-gray-400 mb-4 text-sm sm:text-base line-clamp-2 
+            <p class="text-gray-400 dark:text-gray-500 mb-4 text-sm sm:text-base line-clamp-2 
                        group-hover:line-clamp-none transition-all duration-300 
-                       group-hover:text-gray-300 max-h-12 sm:max-h-none overflow-hidden">
+                       group-hover:text-gray-300 dark:group-hover:text-gray-400 max-h-12 sm:max-h-none overflow-hidden">
               {{ project.description }}
             </p>
             

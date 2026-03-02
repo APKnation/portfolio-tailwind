@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 w-full bg-gray-900/95 backdrop-blur-lg shadow-2xl z-50 
+  <nav class="fixed top-0 left-0 w-full bg-gray-900/95 backdrop-blur-lg shadow-2xl z-40 
                border-b border-gradient-to-r from-primary-500/30 via-secondary-500/30 to-indigo-500/30 
                transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

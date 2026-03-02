@@ -1,11 +1,11 @@
 <template>
-  <section id="contact" class="py-16 sm:py-20 bg-gray-900 text-white">
+  <section id="contact" class="py-16 sm:py-20 text-white dark:text-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-white sm:text-5xl leading-tight mb-4">
+        <h2 class="text-4xl font-extrabold text-white dark:text-gray-100 sm:text-5xl leading-tight mb-4">
           <span class="gradient-text">Get In Touch</span>
         </h2>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-400 dark:text-gray-500 max-w-2xl mx-auto">
           I'm actively open to discussing new opportunities, collaborations, and exciting projects. 
           Whether you're looking to hire, partner on a project, or simply connect about technology, 
           I'm always interested in meaningful conversations that can lead to impactful solutions.
@@ -13,8 +13,8 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-primary-700/50">
-          <h3 class="text-3xl font-bold text-white mb-8">Send Message</h3>
+        <div class="bg-gray-800 dark:bg-gray-900 p-8 rounded-lg shadow-xl border border-primary-700/50">
+          <h3 class="text-3xl font-bold text-white dark:text-gray-100 mb-8">Send Message</h3>
           
           <form @submit.prevent="submitForm" class="space-y-6">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -58,8 +58,8 @@
           </form>
         </div>
 
-        <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-primary-700/50">
-          <h3 class="text-3xl font-bold text-white mb-8">Communication Channels</h3>
+        <div class="bg-gray-800 dark:bg-gray-900 p-8 rounded-lg shadow-xl border border-primary-700/50">
+          <h3 class="text-3xl font-bold text-white dark:text-gray-100 mb-8">Communication Channels</h3>
           <p class="text-gray-300 mb-8 leading-relaxed">
             I believe in clear and prompt communication. Below are the various ways you can reach me 
             based on your needs and preferences. Each channel is monitored regularly to ensure 

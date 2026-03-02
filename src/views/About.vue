@@ -1,8 +1,8 @@
 <template>
-  <section id="about" class="py-16 sm:py-20 px-4 bg-gray-900 text-white">
+  <section id="about" class="py-16 sm:py-20 px-4 text-white dark:text-gray-100">
     <div class="max-w-7xl mx-auto">
       <transition appear name="fade">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-white">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-white dark:text-gray-100">
           About Me
         </h2>
       </transition>

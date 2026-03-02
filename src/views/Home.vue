@@ -3,7 +3,7 @@
     <!-- Simple Animation Background -->
     <SimpleAnimation />
     
-    <section id="hero" class="h-screen flex items-center justify-center text-white relative overflow-hidden">
+    <section id="hero" class="h-screen flex items-center justify-center text-white relative overflow-hidden bg-gray-900 dark:bg-black">
       <!-- Dark Background Overlay -->
       <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95"></div>
       
@@ -24,7 +24,7 @@
           <!-- Text Content -->
           <div class="w-full lg:w-1/2 text-center lg:text-left">
             <transition appear name="slide-up">
-              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-white dark:text-gray-100">
                 Hi, I'm
                 <span class="name-highlight">
                   Atanas Patrick
@@ -33,13 +33,13 @@
             </transition>
             
             <transition appear name="slide-up" :delay="200">
-              <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-6 text-cyan-300">
+              <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-6 text-cyan-300 dark:text-cyan-400">
                 Software Engineer
               </h2>
             </transition>
             
             <transition appear name="slide-up" :delay="400">
-              <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-gray-300 max-w-lg mx-auto lg:mx-0">
+              <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-gray-300 dark:text-gray-400 max-w-lg mx-auto lg:mx-0">
                 Welcome to my digital space where creativity meets functionality. I'm a passionate software engineer 
                 dedicated to crafting innovative solutions that bridge technology and human needs. Explore my journey 
                 through code, design, and continuous learning as we build the future together.
@@ -97,27 +97,27 @@
       </section>
 
     <!-- About Section -->
-    <section id="about" class="py-4 sm:py-8 bg-gray-900 text-white">
+    <section id="about" class="py-0 sm:py-1 bg-gray-900 dark:bg-black text-white dark:text-gray-100">
       <About />
     </section>
     
     <!-- Skills Section -->
-    <section id="skills" class="py-4 sm:py-8 bg-gray-800 text-white">
+    <section id="skills" class="py-0 sm:py-1 bg-gray-800 dark:bg-gray-900 text-white dark:text-gray-100">
       <Skills />
     </section>
     
     <!-- Experience Section -->
-    <section id="experience" class="py-4 sm:py-8 bg-gray-900 text-white">
+    <section id="experience" class="py-0 sm:py-1 bg-gray-900 dark:bg-black text-white dark:text-gray-100">
       <Experience />
     </section>
     
     <!-- Projects Section -->
-    <section id="projects" class="py-4 sm:py-8 bg-gray-800 text-white">
+    <section id="projects" class="py-0 sm:py-1 bg-gray-800 dark:bg-gray-900 text-white dark:text-gray-100">
       <Projects />
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-4 sm:py-8 bg-gray-900 text-white">
+    <section id="contact" class="py-0 sm:py-1 bg-gray-900 dark:bg-black text-white dark:text-gray-100">
       <Contact />
     </section>
   </div>

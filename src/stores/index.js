@@ -15,16 +15,36 @@ const getImagePath = (importedImage, fallbackPath) => {
 }
 
 export const useThemeStore = defineStore('theme', () => {
-  const isDarkMode = ref(localStorage.getItem('theme') === 'dark')
+  const isDarkMode = ref(false)
   
   const toggleTheme = () => {
     isDarkMode.value = !isDarkMode.value
     localStorage.setItem('theme', isDarkMode.value ? 'dark' : 'light')
+    
+    // Update DOM immediately
+    if (isDarkMode.value) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }
   
   const setTheme = (theme) => {
     isDarkMode.value = theme === 'dark'
     localStorage.setItem('theme', theme)
+    
+    // Update DOM immediately
+    if (isDarkMode.value) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }
+  
+  // Initialize on creation
+  if (localStorage.getItem('theme') === 'dark') {
+    isDarkMode.value = true
+    document.documentElement.classList.add('dark')
   }
   
   return {

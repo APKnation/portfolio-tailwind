@@ -1,8 +1,8 @@
 <template>
-  <section id="experience" class="py-8 sm:py-12 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+  <section id="experience" class="py-8 sm:py-12 px-4 text-white dark:text-gray-100 relative z-10 pt-24 sm:pt-32">
     <div class="max-w-7xl mx-auto">
       <transition appear name="fade">
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 sm:mb-4 md:mb-6 text-white">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 sm:mb-4 md:mb-6 text-white dark:text-gray-100">
           Experience & Education
         </h2>
       </transition>
@@ -15,7 +15,7 @@
               Professional Journey
             </h3>
           </transition>
-          <p class="text-center text-gray-400 text-sm max-w-3xl mx-auto mb-6">
+          <p class="text-center text-gray-400 dark:text-gray-500 text-sm max-w-3xl mx-auto mb-6">
             My professional experience spans software development roles where I've contributed to building 
             scalable applications, leading development teams, and implementing industry best practices.
           </p>
@@ -97,7 +97,7 @@
               Academic Foundation
             </h3>
           </transition>
-          <p class="text-center text-gray-400 text-sm max-w-3xl mx-auto mb-6">
+          <p class="text-center text-gray-400 dark:text-gray-500 text-sm max-w-3xl mx-auto mb-6">
             My academic journey in Software Engineering has provided me with strong theoretical foundations 
             and practical skills that complement my professional experience.
           </p>
