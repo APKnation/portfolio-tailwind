@@ -7,6 +7,7 @@ import trackerImage from '@/assets/images/tracker.png'
 import taskImage from '@/assets/images/task.png'
 import farmerImage from '@/assets/images/farmer.png'
 import timberImage from '@/assets/images/timber.jpeg'
+import schoolImage from '@/assets/images/school.png'
 
 // Fallback paths for local development
 const getImagePath = (importedImage, fallbackPath) => {
@@ -107,6 +108,17 @@ export const usePortfolioStore = defineStore('portfolio', () => {
       image: getImagePath(timberImage, '/src/assets/images/timber.jpeg'),
       technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB', 'GPS Tracking'],
       category: 'mobile',
+      demoUrl: '#',
+      githubUrl: '#',
+      featured: true
+    },
+    {
+      id: 6,
+      title: 'School Management System',
+      description: 'Comprehensive platform for managing student records, attendance, grading, and communication between teachers, students, and parents.',
+      image: getImagePath(schoolImage, '/src/assets/images/school.png'),
+      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Tailwind CSS', 'REST API'],
+      category: 'web',
       demoUrl: '#',
       githubUrl: '#',
       featured: true
